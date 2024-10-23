@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retirement Monthly Budget Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Retirement Monthly Budget Calculator</h1>
+        <div class="calculator">
+            <!-- Current Assets and Planning Years Section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="current-assets">Current Assets</label>
+                    <input type="number" id="current-assets" min="0" step="1000" value="100000">
+                    <input type="range" id="assets-slider" min="0" max="1000000" step="1000" value="100000">
+                </div>
+                <div class="input-group">
+                    <label for="planning-years">Planning Years</label>
+                    <input type="number" id="planning-years" min="1" max="50" step="1" value="20">
+                    <input type="range" id="years-slider" min="1" max="50" step="1" value="20">
+                </div>
+                <div class="input-group">
+                    <button id="calculate-button">Calculate Monthly Budget</button>
+                </div>
+                <div class="input-group">
+                    <label>Monthly Budget</label>
+                    <p id="monthly-budget">$0</p>
+                </div>
+            </div>
+
+            <!-- Expenses Percentage Monitor -->
+            <div class="percentage-monitor">
+                <p>Total Expense Percentage: <span id="total-percentage">0</span>% (Should equal 100%)</p>
+            </div>
+
+            <!-- Expenses Breakdown Section -->
+            <div class="expenses-container">
+                <h2>Expenses Breakdown</h2>
+                <!-- Expense Categories -->
+                <!-- Repeat this block for each expense category -->
+                <div class="expense">
+                    <div class="expense-header">
+                        <label>Housing</label>
+                        <div class="percentage-group">
+                            <input type="number" class="percentage-input" min="0" max="100" step="1" value="30">%
+                            <input type="range" class="percentage-slider" min="0" max="100" step="1" value="30">
+                        </div>
+                    </div>
+                    <div class="expense-body">
+                        <input type="number" class="expense-input" min="0" step="1" value="0">
+                        <input type="range" class="expense-slider" min="0" max="10000" step="1" value="0">
+                    </div>
+                </div>
+                <!-- Add other expense categories similarly -->
+                <!-- Food -->
+                <div class="expense">
+                    <div class="expense-header">
+                        <label>Food</label>
+                        <div class="percentage-group">
+                            <input type="number" class="percentage-input" min="0" max="100" step="1" value="15">%
+                            <input type="range" class="percentage-slider" min="0" max="100" step="1" value="15">
+                        </div>
+                    </div>
+                    <div class="expense-body">
+                        <input type="number" class="expense-input" min="0" step="1" value="0">
+                        <input type="range" class="expense-slider" min="0" max="10000" step="1" value="0">
+                    </div>
+                </div>
+                <!-- Continue for Healthcare, Transportation, etc. -->
+                <!-- Healthcare -->
+                <div class="expense">
+                    <div class="expense-header">
+                        <label>Healthcare</label>
+                        <div class="percentage-group">
+                            <input type="number" class="percentage-input" min="0" max="100" step="1" value="10">%
+                            <input type="range" class="percentage-slider" min="0" max="100" step="1" value="10">
+                        </div>
+                    </div>
+                    <div class="expense-body">
+                        <input type="number" class="expense-input" min="0" step="1" value="0">
+                        <input type="range" class="expense-slider" min="0" max="10000" step="1" value="0">
+                    </div>
+                </div>
+                <!-- Transportation -->
+                <div class="expense">
+                    <div class="expense-header">
+                        <label>Transportation</label>
+                        <div class="percentage-group">
+                            <input type="number" class="percentage-input" min="0" max="100" step="1" value="10">%
+                            <input type="range" class="percentage-slider" min="0" max="100" step="1" value="10">
+                        </div>
+                    </div>
+                    <div class="expense-body">
+                        <input type="number" class="expense-input" min="0" step="1" value="0">
+                        <input type="range" class="expense-slider" min="0" max="10000" step="1" value="0">
+                    </div>
+                </div>
+                <!-- Entertainment & Recreation -->
+                <div class="expense">
+                    <div class="expense-header">
+                        <label>Entertainment & Recreation</label>
+                        <div class="percentage-group">
+                            <input type="number" class="percentage-input" min="0" max="100" step="1" value="10">%
+                            <input type="range" class="percentage-slider" min="0" max="100" step="1" value="10">
+                        </div>
+                    </div>
+                    <div class="expense-body">
+                        <input type="number" class="expense-input" min="0" step="1" value="0">
+                        <input type="range" class="expense-slider" min="0" max="10000" step="1" value="0">
+                    </div>
+                </div>
+                <!-- Insurance & Savings -->
+                <div class="expense">
+                    <div class="expense-header">
+                        <label>Insurance & Savings</label>
+                        <div class="percentage-group">
+                            <input type="number" class="percentage-input" min="0" max="100" step="1" value="15">%
+                            <input type="range" class="percentage-slider" min="0" max="100" step="1" value="15">
+                        </div>
+                    </div>
+                    <div class="expense-body">
+                        <input type="number" class="expense-input" min="0" step="1" value="0">
+                        <input type="range" class="expense-slider" min="0" max="10000" step="1" value="0">
+                    </div>
+                </div>
+                <!-- Miscellaneous -->
+                <div class="expense">
+                    <div class="expense-header">
+                        <label>Miscellaneous</label>
+                        <div class="percentage-group">
+                            <input type="number" class="percentage-input" min="0" max="100" step="1" value="10">%
+                            <input type="range" class="percentage-slider" min="0" max="100" step="1" value="10">
+                        </div>
+                    </div>
+                    <div class="expense-body">
+                        <input type="number" class="expense-input" min="0" step="1" value="0">
+                        <input type="range" class="expense-slider" min="0" max="10000" step="1" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Remaining Budget and Pie Chart Section -->
+            <div class="output-section">
+                <div class="output-group">
+                    <label>Remaining Budget</label>
+                    <p id="remaining-budget">$0</p>
+                </div>
+                <div class="output-group">
+                    <canvas id="expense-chart"></canvas>
+                </div>
+            </div>
+
+            <!-- Tips and Insights Section -->
+            <div class="tips-section">
+                <h2>Tips and Insights</h2>
+                <p id="tips-insights">Adjust your expenses to see tips and insights.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
